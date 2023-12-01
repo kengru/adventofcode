@@ -1,22 +1,25 @@
 import { readFileSync } from "node:fs";
+import { getFirstNumber, getLastNumber, strToNum } from "./utils";
 
 const buffer = readFileSync("src/01-trebuchet/input.txt");
+// const buffer = readFileSync("src/01-trebuchet/test-input.txt");
 const input = buffer.toString().split("\n");
 
 const cValues = input.map((line) => {
-  let cValue = 0;
-  const numbers = line.split("").filter((char) => parseInt(char));
-  const len = numbers.length;
-  if (len === 1) {
-    cValue = parseInt(numbers[0] + numbers[0]);
-  }
-  if (len > 1) {
-    cValue = parseInt(numbers[0] + numbers[len - 1]);
-  }
+  const f = getFirstNumber(line);
+  const l = getLastNumber(line);
 
-  return cValue;
+  return strToNum(f, l);
 });
 
 const calibration = cValues.reduce((acc, curr) => acc + curr, 0);
 
 console.log(calibration);
+
+// These are all the wrong answers I got
+// 47869
+// 53168
+// 53148
+// 54442
+// 53796
+// 53888
