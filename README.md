@@ -1,4 +1,4 @@
-# Advent of code 2023!
+# Advent of code!
 
 Attempts at solving all of [advent of code](https://adventofcode.com) for the month of december using typescript. I will try to create a README.md file with the prompt for every day.
 
