@@ -1,9 +1,9 @@
 {
-  "name": "adventofcode2023",
-  "version": "1.0.0",
-  "description": "Attempt at Advent of Code 2023",
+  "name": "adventofcode",
+  "version": "0.2.0",
+  "description": "Attempt at Advent of Code",
   "main": "index.js",
-  "repository": "https://github.com/kengru/adventofcode2023.git",
+  "repository": "https://github.com/kengru/adventofcode.git",
   "author": "Kendry Grullon <kengrullon@gmail.com>",
   "license": "MIT",
   "dependencies": {
