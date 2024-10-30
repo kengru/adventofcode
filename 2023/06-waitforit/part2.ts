@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 
-const buffer = readFileSync("src/06-waitforit/input.txt");
+const buffer = readFileSync("2023/06-waitforit/input.txt");
 const [time, distance] = buffer.toString().split("\n");
 const [_, times] = time.split(":");
 const [__, distances] = distance.split(":");

@@ -33,7 +33,6 @@ const nices = strs.reduce((prev, cur) => {
   if (!containsPair(cur) || !jumpsBetween(cur)) {
     return prev;
   }
-  console.log(cur);
   return prev + 1;
 }, 0);
 
