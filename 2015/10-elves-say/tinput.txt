@@ -1,0 +1,5 @@
+London to Dublin = 464
+London to Belfast = 518
+Dublin to Belfast = 141
+London to SantoDomingo = 122
+SantoDomingo to Belfast = 344

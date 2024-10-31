@@ -154,6 +154,6 @@ while (wires["a"].ops.length !== 0) {
   });
 }
 
-console.log(wires["a"]);
+console.log(wires["a"].v);
 
 console.timeEnd("t");

@@ -150,7 +150,6 @@ while (wires["a"].ops.length !== 0) {
   p22++;
 }
 
-console.log(wires["a"]);
-console.log(p22);
+console.log(wires["a"].v);
 
 console.timeEnd("t");
