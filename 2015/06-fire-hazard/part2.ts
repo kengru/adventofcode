@@ -1,12 +1,12 @@
 import { readFileSync } from "node:fs";
 
+console.time("bench");
+
 type Bomb = { [k: string]: number };
 
 const buffer = readFileSync("2015/06-fire-hazard/input.txt");
 const instructions = buffer.toString().split("\n");
 const bombillos: Bomb = {};
-
-console.time("t");
 
 function turnOn(v: string) {
   if (bombillos[v]) {
@@ -70,6 +70,6 @@ for (let i = 0; i < instructions.length; i++) {
 
 const total = Object.values(bombillos).reduce((prev, cur) => prev + cur, 0);
 
-console.log(total);
+console.timeEnd("bench");
 
-console.timeEnd("t");
+console.log(total);

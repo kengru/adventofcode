@@ -1,5 +1,7 @@
 import { readFileSync } from "node:fs";
 
+console.time("bench");
+
 type ValOp = {
   v: number | undefined;
   ops: string[];
@@ -13,8 +15,6 @@ wires["b"] = {
   v: 3176,
   ops: [],
 };
-
-console.time("t");
 
 function parseOperation(operation: string, wire: string): boolean {
   if (!wires[wire]) {
@@ -154,6 +154,6 @@ while (wires["a"].ops.length !== 0) {
   });
 }
 
-console.log(wires["a"].v);
+console.timeEnd("bench");
 
-console.timeEnd("t");
+console.log(wires["a"].v);

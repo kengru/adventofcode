@@ -1,11 +1,13 @@
 import { readFileSync } from "node:fs";
 
+console.time("bench");
+
 type Match = {
   val: string;
   idx: number;
 };
 
-const buffer = readFileSync("src/03-gear-ratios/input.txt");
+const buffer = readFileSync("2023/03-gear-ratios/input.txt");
 const input = buffer.toString().split("\n");
 
 const digitReg = /\d+/g;
@@ -49,7 +51,6 @@ function getTwoAround(match: Match, idx: number, input: string[]) {
   return nums.length === 2 ? nums[0] * nums[1] : 0;
 }
 
-console.log(sum);
+console.timeEnd("bench");
 
-// All the wrong answers I got:
-// 90172708
+console.log(sum);

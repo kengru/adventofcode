@@ -1,6 +1,8 @@
 import { readFileSync } from "node:fs";
 
-const buffer = readFileSync("src/04-scratchcards/input.txt");
+console.time("bench");
+
+const buffer = readFileSync("2023/04-scratchcards/input.txt");
 const input = buffer.toString().split("\n");
 const newInput = input.map((line) => {
   const [_, numbers] = line.split(": ");
@@ -37,4 +39,6 @@ function recursiveList(input: string[], start: number) {
 
 recursiveList(newInput, 0);
 
-console.log(sum); // This takes so much but it's honest work!
+console.timeEnd("bench");
+
+console.log(sum);

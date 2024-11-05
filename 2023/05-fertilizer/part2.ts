@@ -1,6 +1,8 @@
 import { readFileSync } from "node:fs";
 
-const buffer = readFileSync("src/05-fertilizer/input.txt");
+console.time("bench");
+
+const buffer = readFileSync("2023/05-fertilizer/input.txt");
 const [seeds, ...maps] = buffer.toString().split("\n\n");
 const seedList = seeds.split(": ")[1];
 
@@ -21,7 +23,6 @@ function getSeedTransform(seed: number, map: string[]) {
 }
 
 function getAllValues(seedList: string) {
-  const finalValues = [0];
   let lowest = Infinity;
   const values = seedList.split(" ");
   for (let i = 0; i < values.length; i += 2) {
@@ -36,7 +37,11 @@ function getAllValues(seedList: string) {
     }
   }
   console.log(lowest);
-  return finalValues;
+  return lowest;
 }
 
-console.log(getAllValues(seedList));
+const lowest = getAllValues(seedList);
+
+console.timeEnd("bench");
+
+console.log(lowest);

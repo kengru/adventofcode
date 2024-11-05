@@ -1,6 +1,8 @@
 import { readFileSync } from "node:fs";
 
-const buffer = readFileSync("src/04-scratchcards/input.txt");
+console.time("bench");
+
+const buffer = readFileSync("2023/04-scratchcards/input.txt");
 const input = buffer.toString().split("\n");
 
 const games = input.reduce((prev, line) => {
@@ -23,7 +25,6 @@ const games = input.reduce((prev, line) => {
   return prev + add;
 }, 0);
 
-console.log(games);
+console.timeEnd("bench");
 
-// Wrong answers:
-// 87586 - too high
+console.log(games);

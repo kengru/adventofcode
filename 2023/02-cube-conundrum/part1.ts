@@ -1,12 +1,14 @@
 import { readFileSync } from "node:fs";
 
+console.time("bench");
+
 const limits: { [key: string]: number } = {
   red: 12,
   green: 13,
-  blue: 14
+  blue: 14,
 };
 
-const buffer = readFileSync("src/02-cube-conundrum/input.txt");
+const buffer = readFileSync("2023/02-cube-conundrum/input.txt");
 const input = buffer.toString().split("\n");
 
 const games = input.reduce((prev, line) => {
@@ -23,5 +25,7 @@ const games = input.reduce((prev, line) => {
 
   return sets.every((set) => set) ? prev + +id : prev;
 }, 0);
+
+console.timeEnd("bench");
 
 console.log(games);

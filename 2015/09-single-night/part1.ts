@@ -1,5 +1,7 @@
 import { readFileSync } from "node:fs";
 
+console.time("bench");
+
 type Edge = {
   ref: string;
   dist: number;
@@ -58,8 +60,6 @@ const buffer = readFileSync("2015/09-single-night/input.txt");
 const routes = buffer.toString().split("\n");
 const gp = new Graph();
 
-console.time("t");
-
 for (let i = 0; i < routes.length; i++) {
   const p1 = routes[i].split(" to ")[0];
   const p2 = routes[i].split(" to ")[1].split(" = ")[0];
@@ -78,6 +78,6 @@ Object.keys(gp.nl).forEach((c) => {
   s.push(gp.dfs(c));
 });
 
-console.log(Math.min(...s));
+console.timeEnd("bench");
 
-console.timeEnd("t");
+console.log(Math.min(...s));

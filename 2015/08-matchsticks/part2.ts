@@ -1,9 +1,9 @@
 import { readFileSync } from "node:fs";
 
+console.time("bench");
+
 const buffer = readFileSync("2015/08-matchsticks/input.txt");
 const literals = buffer.toString().split("\n");
-
-console.time("t");
 
 let sum = 0;
 
@@ -21,6 +21,6 @@ for (let i = 0; i < literals.length; i++) {
   sum += count - chc;
 }
 
-console.log(sum);
+console.timeEnd("bench");
 
-console.timeEnd("t");
+console.log(sum);

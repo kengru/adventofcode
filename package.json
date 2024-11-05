@@ -1,7 +1,7 @@
 {
   "name": "adventofcode",
-  "version": "0.2.0",
-  "description": "Attempt at Advent of Code",
+  "version": "0.3.0",
+  "description": "Attempt at every Advent of Code",
   "main": "index.js",
   "repository": "https://github.com/kengru/adventofcode.git",
   "author": "Kendry Grullon <kengrullon@gmail.com>",

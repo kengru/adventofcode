@@ -1,8 +1,9 @@
 import { readFileSync } from "node:fs";
 import { getFirstNumber, getLastNumber, strToNum } from "./utils";
 
-const buffer = readFileSync("src/01-trebuchet/input.txt");
-// const buffer = readFileSync("src/01-trebuchet/test-input.txt");
+console.time("bench");
+
+const buffer = readFileSync("2023/01-trebuchet/input.txt");
 const input = buffer.toString().split("\n");
 
 const cValues = input.map((line) => {
@@ -14,12 +15,6 @@ const cValues = input.map((line) => {
 
 const calibration = cValues.reduce((acc, curr) => acc + curr, 0);
 
-console.log(calibration);
+console.timeEnd("bench");
 
-// These are all the wrong answers I got
-// 47869
-// 53168
-// 53148
-// 54442
-// 53796
-// 53888
+console.log(calibration);

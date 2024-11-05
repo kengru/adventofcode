@@ -1,11 +1,13 @@
 import { readFileSync } from "node:fs";
 
+console.time("bench");
+
 type Match = {
   val: string;
   idx: number;
 };
 
-const buffer = readFileSync("src/03-gear-ratios/input.txt");
+const buffer = readFileSync("2023/03-gear-ratios/input.txt");
 const input = buffer.toString().split("\n");
 
 const digitReg = /\d+/g;
@@ -50,7 +52,6 @@ function lookAround(match: Match, idx: number, input: string[]): boolean {
   return false;
 }
 
-console.log(sum);
+console.timeEnd("bench");
 
-// All the wrong answers I got:
-// 554197
+console.log(sum);

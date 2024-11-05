@@ -1,6 +1,8 @@
 import { readFileSync } from "node:fs";
 
-const buffer = readFileSync("src/02-cube-conundrum/input.txt");
+console.time("bench");
+
+const buffer = readFileSync("2023/02-cube-conundrum/input.txt");
 const input = buffer.toString().split("\n");
 
 const games = input.reduce((prev, line) => {
@@ -8,7 +10,7 @@ const games = input.reduce((prev, line) => {
   const lowest: { [key: string]: number } = {
     red: 0,
     green: 0,
-    blue: 0
+    blue: 0,
   };
 
   cubes.split(";").forEach((set) => {
@@ -20,5 +22,7 @@ const games = input.reduce((prev, line) => {
 
   return prev + lowest.red * lowest.green * lowest.blue;
 }, 0);
+
+console.timeEnd("bench");
 
 console.log(games);

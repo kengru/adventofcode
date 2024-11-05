@@ -1,6 +1,8 @@
 import { readFileSync } from "node:fs";
 
-const buffer = readFileSync("2023/06-waitforit/input.txt");
+console.time("bench");
+
+const buffer = readFileSync("2023/06-wait-for-it/input.txt");
 const [time, distance] = buffer.toString().split("\n");
 const [_, times] = time.split(":");
 const [__, distances] = distance.split(":");
@@ -21,5 +23,7 @@ for (let hold = 1; hold < t; hold++) {
     counter++;
   }
 }
+
+console.timeEnd("bench");
 
 console.log(counter);

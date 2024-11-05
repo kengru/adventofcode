@@ -11,7 +11,7 @@ function md5(value: string) {
 }
 
 function hasLeadingZeroes(val: string): boolean {
-  return val.startsWith("00000");
+  return val.startsWith("000000");
 }
 
 while (!stop) {

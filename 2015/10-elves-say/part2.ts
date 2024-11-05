@@ -1,6 +1,6 @@
-let input = "1113222113";
+console.time("bench");
 
-console.time("t");
+let input = "1113222113";
 
 function parseSay(v: string): string {
   let newV = "";
@@ -16,10 +16,10 @@ function parseSay(v: string): string {
   return newV;
 }
 
-for (let i = 0; i < 60; i++) {
+for (let i = 0; i < 50; i++) {
   input = parseSay(input);
 }
 
-console.log(input.length);
+console.timeEnd("bench");
 
-console.timeEnd("t");
+console.log(input.length);

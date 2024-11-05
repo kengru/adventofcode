@@ -1,33 +1,13 @@
-## --- Day 1: Not Quite Lisp ---
+## --- Day 3: Squares With Three Sides ---
 
-Santa was hoping for a white Christmas, but his weather machine's "snow" function is powered by stars, and he's fresh out! To save Christmas, he needs you to collect fifty stars by December 25th.
+Now that you can think clearly, you move deeper into the labyrinth of hallways and office furniture that makes up this part of Easter Bunny HQ. This must be a graphic design department; the walls are covered in specifications for triangles.
 
-Collect stars by helping Santa solve puzzles. Two puzzles will be made available on each day in the Advent calendar; the second puzzle is unlocked when you complete the first. Each puzzle grants one star. Good luck!
+Or are they?
 
-Here's an easy puzzle to warm you up.
+The design document gives the side lengths of each triangle it describes, but... 5 10 25? Some of these aren't triangles. You can't help but mark the impossible ones.
 
-Santa is trying to deliver presents in a large apartment building, but he can't find the right floor - the directions he got are a little confusing. He starts on the ground floor (floor 0) and then follows the instructions one character at a time.
+In a valid triangle, the sum of any two sides must be larger than the remaining side. For example, the "triangle" given above is impossible, because 5 + 10 is not larger than 25.
 
-An opening parenthesis, (, means he should go up one floor, and a closing parenthesis, ), means he should go down one floor.
-
-The apartment building is very tall, and the basement is very deep; he will never find the top or bottom floors.
-
-For example:
-
-- (()) and ()() both result in floor 0.
-- ((( and (()(()( both result in floor 3.
-- ))((((( also results in floor 3.
-- ()) and ))( both result in floor -1 (the first basement level).
-- ))) and )())()) both result in floor -3.
-
-To what floor do the instructions take Santa?
+In your puzzle input, how many of the listed triangles are possible?
 
 ## --- Part Two ---
-
-Now, given the same instructions, find the position of the first character that causes him to enter the basement (floor -1). The first character in the instructions has position 1, the second character has position 2, and so on.
-
-For example:
-
-) causes him to enter the basement at character position 1.
-()()) causes him to enter the basement at character position 5.
-What is the position of the character that causes Santa to first enter the basement?

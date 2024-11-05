@@ -1,10 +1,10 @@
 import { readFileSync } from "node:fs";
 
+console.time("bench");
+
 const buffer = readFileSync("2015/06-fire-hazard/input.txt");
 const instructions = buffer.toString().split("\n");
 const bombillos = new Set();
-
-console.time("t");
 
 function turnOn(v: string) {
   bombillos.add(v);
@@ -60,6 +60,6 @@ for (let i = 0; i < instructions.length; i++) {
   }
 }
 
-console.log(bombillos.size);
+console.timeEnd("bench");
 
-console.timeEnd("t");
+console.log(bombillos.size);

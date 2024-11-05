@@ -1,5 +1,7 @@
 import { readFileSync } from "node:fs";
 
+console.time("bench");
+
 type ValOp = {
   v: number | undefined;
   ops: string[];
@@ -9,8 +11,6 @@ type Inst = { [k: string]: ValOp };
 const buffer = readFileSync("2015/07-assembly-required/input.txt");
 const instructions = buffer.toString().split("\n");
 const wires: Inst = {};
-
-console.time("t");
 
 function parseOperation(operation: string, wire: string): boolean {
   if (!wires[wire]) {
@@ -150,6 +150,6 @@ while (wires["a"].ops.length !== 0) {
   p22++;
 }
 
-console.log(wires["a"].v);
+console.timeEnd("bench");
 
-console.timeEnd("t");
+console.log(wires["a"].v);

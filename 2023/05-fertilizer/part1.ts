@@ -1,6 +1,8 @@
 import { readFileSync } from "node:fs";
 
-const buffer = readFileSync("src/05-fertilizer/input.txt");
+console.time("bench");
+
+const buffer = readFileSync("2023/05-fertilizer/input.txt");
 const [seeds, ...maps] = buffer.toString().split("\n\n");
 const seedList = seeds.split(": ")[1];
 
@@ -28,4 +30,6 @@ const seedLocations = seedList.split(" ").map((seed) => {
   return location;
 });
 
-console.log(Math.min(...seedLocations)); // 165788812
+console.timeEnd("bench");
+
+console.log(Math.min(...seedLocations));

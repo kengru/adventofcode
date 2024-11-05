@@ -1,6 +1,8 @@
 import { readFileSync } from "node:fs";
 
-const buffer = readFileSync("src/01-trebuchet/input.txt");
+console.time("bench");
+
+const buffer = readFileSync("2023/01-trebuchet/input.txt");
 const input = buffer.toString().split("\n");
 
 const cValues = input.map((line) => {
@@ -18,5 +20,7 @@ const cValues = input.map((line) => {
 });
 
 const calibration = cValues.reduce((acc, curr) => acc + curr, 0);
+
+console.timeEnd("bench");
 
 console.log(calibration);
