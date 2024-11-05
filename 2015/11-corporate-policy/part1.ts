@@ -67,7 +67,6 @@ function isValid(pass: string): boolean {
 let v = false;
 while (!v) {
   txtInput = nextPassword(txtInput);
-  console.log(txtInput);
   if (isValid(txtInput)) {
     v = true;
   }

@@ -6,6 +6,9 @@
   "repository": "https://github.com/kengru/adventofcode.git",
   "author": "Kendry Grullon <kengrullon@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "go": "npx ts-node run.ts"
+  },
   "dependencies": {
     "ts-node": "^10.9.1",
     "typescript": "^5.3.2"
