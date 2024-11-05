@@ -7,7 +7,8 @@
   "author": "Kendry Grullon <kengrullon@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "go": "npx ts-node run.ts"
+    "go": "npx ts-node run.ts",
+    "gen": "npx ts-node gen.ts"
   },
   "dependencies": {
     "ts-node": "^10.9.1",
