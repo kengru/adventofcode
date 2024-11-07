@@ -8,6 +8,8 @@ function sendExecStdout(line: string) {
   exec(line, (err, stout) => {
     if (err) {
       console.error(`couldn't find exercise: ${line.split("npx ts-node ")[1]}`);
+      console.log(stout);
+      console.error(err);
       return;
     }
     console.log(`${line}:\n${stout}`);

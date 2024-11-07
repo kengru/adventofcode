@@ -1,29 +1,22 @@
 import { readFileSync } from "node:fs";
 
-const buffer = readFileSync("2016/03-squares-three/input.txt");
-const triangles = buffer.toString().split("\n");
-let sum = 0;
+console.time("bench");
 
-function getNumbers(val: string): number[] {
-  return val
-    .split("  ")
-    .map((n) => +n.trim())
-    .filter((v) => v !== 0);
-}
+const buffer = readFileSync("2016/01-no-time-taxicab/input.txt");
+const directions = buffer.toString().split(", ");
 
-for (let i = 0; i < triangles.length; i++) {
-  const values = getNumbers(triangles[i]);
-  let possible = true;
-  for (let j = 0; j < values.length; j++) {
-    let p1 = values[j];
-    let p2 = j + 1 > values.length ? values[0] : values[j + 1];
-    let remaining = values.filter((v) => v != p1 && v != p2)[0];
-    if (p1 + p2 <= remaining) {
-      console.log(p1, p2, remaining);
-      possible = false;
-    }
-  }
-  sum += possible ? 1 : 0;
-}
+const lastPos = directions.reduce(
+  (prev, cur) => {
+    const rl = cur[0] === "R" ? Math.PI / 2 : -(Math.PI / 2);
+    const amt = +cur.slice(1);
+    const ang = +prev[2] + rl;
+    const nx = Math.round(prev[0] + amt * Math.cos(ang));
+    const ny = Math.round(prev[1] + amt * Math.sin(ang));
+    return [nx, ny, ang];
+  },
+  [0, 0, Math.PI / 2]
+);
 
-console.log(sum);
+console.timeEnd("bench");
+
+console.log(Math.abs(lastPos[0]) + Math.abs(lastPos[1]));
