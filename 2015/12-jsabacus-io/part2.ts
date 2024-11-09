@@ -28,7 +28,12 @@ function flatArray(arr: any[]): number[] {
 
 function flatObject(obj: any): number[] {
   const ar: number[] = [];
-  Object.keys(obj).forEach((k) => {
+  const keys = Object.keys(obj);
+  const values = Object.values(obj);
+  if (values.includes("red")) {
+    return [];
+  }
+  keys.forEach((k) => {
     if (Array.isArray(obj[k])) {
       const nums = flatArray(obj[k]);
       ar.push(...nums);

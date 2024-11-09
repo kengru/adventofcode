@@ -6,7 +6,6 @@ const [year, ex, part] = arg.split("/");
 
 function sendExecStdout(line: string) {
   exec(line, (err, stout) => {
-    console.log(line);
     if (err) {
       console.error(`couldn't find exercise: ${line.split("npx ts-node ")[1]}`);
       console.log(stout);
