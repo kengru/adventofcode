@@ -63,6 +63,8 @@ for (let i = 0; i < perms.length; i++) {
   }
 }
 
+console.log(ppl);
+
 console.timeEnd("bench");
 
 console.log(max);
