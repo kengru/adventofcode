@@ -62,8 +62,6 @@ while (true) {
 }
 positions.add(`${idx.x}-${idx.y}`);
 
-console.log(positions.size);
-
 function check(nm: string[][]): boolean {
   const trail = new Set<string>();
   let mark = "^";
@@ -128,23 +126,9 @@ positions.forEach((v) => {
   const mmap = JSON.parse(JSON.stringify(originalMap)) as string[][];
   mmap[y][x] = "@";
   const loop = check(mmap);
-  // if (loop) {
-  //   printMap(mmap);
-  // }
   total += loop ? 1 : 0;
 });
 
-function printMap(mmap: string[][]) {
-  console.log("map");
-  for (let i = 0; i < mmap.length; i++) {
-    console.log(mmap[i].join(""));
-  }
-}
-
 console.log(total);
-
-// 1617 - too high
-// 1616 - too high
-// 1600 - too high
 
 console.timeEnd("bench");
